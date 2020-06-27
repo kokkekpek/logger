@@ -1,7 +1,6 @@
 {
   "name": "logger",
-  "version": "1.0.2",
-  "type": "module",
+  "version": "1.1.0",
   "description": "Logger on winston.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -15,7 +14,7 @@
     "winston": "^3.2.1"
   },
   "scripts": {
-    "example": "ts-node example/index.ts",
+    "example": "ts-node example/index",
     "build": "tsc"
   }
 }

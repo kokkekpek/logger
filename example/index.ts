@@ -1,7 +1,8 @@
 import config from './config'
-import Logger from '../index'
+import Logger, {LoggerInterface} from '../'
 
-const logger = new Logger(config)
+const logger: LoggerInterface = new Logger(config)
+
 /********
  * INFO *
  ********/
