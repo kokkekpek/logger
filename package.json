@@ -16,6 +16,6 @@
   },
   "scripts": {
     "example": "ts-node example/index.ts",
-    "buld": "tsc"
+    "build": "tsc"
   }
 }
