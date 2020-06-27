@@ -1,7 +1,7 @@
 # README
-## Installation
+## Add to project
 ```sh
-yarn add kokkekpek/logger#^1.0
+yarn add kokkekpek/logger#^1.1
 ```
 
 ## Use
@@ -68,9 +68,10 @@ export default {
 **index.ts**
 ```typescript
 import config from './config'
-import Logger from 'kokkekpek/logger'
+import Logger, {LoggerInterface} from '../'
 
-const logger = new Logger(config)
+const logger: LoggerInterface = new Logger(config)
+
 /********
  * INFO *
  ********/
@@ -102,11 +103,15 @@ logger.finish('exit').then(() => {
 })
 ```
 
-## Run DEV examples
+## DEV
 Install modules
 ```sh
 yarn install
 ```
+
+```sh
+yarn build
+````
 
 Run example/index.ts
 ```sh
