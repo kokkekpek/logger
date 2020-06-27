@@ -109,11 +109,12 @@ Install modules
 yarn install
 ```
 
+Build
 ```sh
 yarn build
 ````
 
-Run example/index.ts
+Run example
 ```sh
 yarn example
 ````
