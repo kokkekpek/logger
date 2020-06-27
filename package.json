@@ -1,6 +1,7 @@
 {
   "name": "logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "type": "module",
   "description": "Logger on winston.js",
   "main": "index.ts",
   "repository": "https://github.org/kokkekpek/logger",
