@@ -3,7 +3,8 @@
   "version": "1.0.2",
   "type": "module",
   "description": "Logger on winston.js",
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.org/kokkekpek/logger",
   "author": "Kok Kek <kokkekpek@gmail.com>",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "winston": "^3.2.1"
   },
   "scripts": {
-    "example": "ts-node example/index.ts"
+    "example": "ts-node example/index.ts",
+    "buld": "tsc"
   }
 }
