@@ -2,6 +2,7 @@ import {TransformableInfo} from 'logform'
 import * as winston from 'winston'
 import * as util from 'util'
 import WinstonDataWrapper from '../WinstonDataWrapper'
+import ObjectInterface from '../../data/ObjectInterface'
 
 function print(info: TransformableInfo): string {
     const {
@@ -35,10 +36,10 @@ function print(info: TransformableInfo): string {
  */
 function formatData(args: Object): string {
     if (!Object.keys(args).length) return ''
-    const data: Object = WinstonDataWrapper.unwrapData(args)
+    const data: ObjectInterface | undefined = WinstonDataWrapper.unwrapData(args)
     if (!data) return ''
-    const result: Object = {}
-    for (let key in data)
+    const result: ObjectInterface = {}
+    for (const key in data)
         result[key] = data[key]
     return util.inspect(result, { colors: true, depth: null})
 }

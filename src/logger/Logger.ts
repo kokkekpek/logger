@@ -4,6 +4,7 @@ import WinstonTransports from './winston/WinstonTransports'
 import WinstonDataWrapper from './winston/WinstonDataWrapper'
 import ConfigInterface from './config/ConfigInterface'
 import LoggerInterface from './LoggerInterface'
+import ObjectInterface from './data/ObjectInterface'
 
 export default class Logger implements LoggerInterface {
     private _logger: WinstonLogger
@@ -19,12 +20,12 @@ export default class Logger implements LoggerInterface {
         this._logger = winston.createLogger(options)
     }
 
-    public info(message: string, data: Object = undefined): LoggerInterface {
+    public info(message: string, data: ObjectInterface | undefined = undefined): LoggerInterface {
         this._logger.info(message, WinstonDataWrapper.wrapData(data))
         return this
     }
 
-    public debug(message: string, data: Object = undefined): LoggerInterface {
+    public debug(message: string, data: ObjectInterface | undefined = undefined): LoggerInterface {
         this._logger.debug(message, WinstonDataWrapper.wrapData(data))
         return this
     }
@@ -41,7 +42,7 @@ export default class Logger implements LoggerInterface {
 
     public finish(message: string): Promise<void> {
         return new Promise((resolve: Function) => {
-            this._logger.info(message, resolve);
+            this._logger.info(message, resolve)
         })
     }
 }

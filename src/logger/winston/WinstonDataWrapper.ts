@@ -1,3 +1,5 @@
+import ObjectInterface from '../data/ObjectInterface'
+
 export default class WinstonDataWrapper {
     public static readonly DATA: string = 'data'
 
@@ -15,9 +17,9 @@ export default class WinstonDataWrapper {
      *         }
      *     }
      */
-    public static wrapData(data: Object | undefined): Object | undefined {
+    public static wrapData(data: ObjectInterface | undefined): Object | undefined {
         if (!data) return undefined
-        const result: Object = {}
+        const result: ObjectInterface = {}
         result[WinstonDataWrapper.DATA] = data
         return result
     }
@@ -36,7 +38,7 @@ export default class WinstonDataWrapper {
      *         port: 6379
      *     }
      */
-    public static unwrapData(data: Object): Object | undefined {
+    public static unwrapData(data: ObjectInterface): ObjectInterface | undefined {
         if (!data.hasOwnProperty(WinstonDataWrapper.DATA)) return undefined
         return data[WinstonDataWrapper.DATA]
     }
