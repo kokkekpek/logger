@@ -68,7 +68,7 @@ export default {
 **index.ts**
 ```typescript
 import config from './config'
-import Logger, {LoggerInterface} from '../'
+import Logger, {LoggerInterface} from 'logger'
 
 const logger: LoggerInterface = new Logger(config)
 
